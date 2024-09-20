@@ -1,0 +1,455 @@
+<html><head><base href="https://websimcreationengine.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamFlix - Your Ultimate Streaming Hub</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-image: url('https://websimcreationengine.com/images/streaming-background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    header {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #e50914;
+    }
+    .nav-links a {
+        color: #333;
+        text-decoration: none;
+        margin-left: 20px;
+        transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+        color: #e50914;
+    }
+    .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .hero-content h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    .hero-content p {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .cta-button {
+        display: inline-block;
+        background-color: #e50914;
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+        background-color: #f40612;
+    }
+    .channels {
+        padding: 80px 0;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    .channels h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+    .channel-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    .channel-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    .channel-card:hover {
+        transform: translateY(-5px);
+    }
+    .channel-image {
+        width: 100%;
+        aspect-ratio: 9/16;
+        object-fit: cover;
+    }
+    .channel-info {
+        padding: 20px;
+    }
+    .channel-info h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .channel-info p {
+        margin-bottom: 15px;
+    }
+    .channel-button {
+        display: inline-block;
+        background-color: #e50914;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+    .channel-button:hover {
+        background-color: #f40612;
+    }
+    .price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #e50914;
+        margin-top: 10px;
+    }
+    .video-section {
+        padding: 80px 0;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .offer-section {
+        padding: 80px 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .offer-title {
+        animation: pulse 2s infinite;
+    }
+    .offer-button {
+        display: inline-block;
+        background-color: #e50914;
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        animation: shimmer 3s infinite;
+        background-image: linear-gradient(to right, #e50914, #f40612, #e50914);
+        background-size: 1000px 100%;
+    }
+    .offer-section h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+    .offer-button:hover {
+        background-color: #f40612;
+    }
+    .offer-button i {
+        margin-right: 10px;
+    }
+    footer {
+        background-color: #222;
+        color: #fff;
+        padding: 40px 0;
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .footer-section {
+        flex: 1;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .footer-section ul {
+        list-style: none;
+    }
+    .footer-section ul li {
+        margin-bottom: 8px;
+    }
+    .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .footer-section ul li a:hover {
+        color: #e50914;
+    }
+    .social-icons {
+        display: flex;
+        margin-top: 15px;
+    }
+    .social-icons a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        background-color: #444;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 10px;
+        transition: background-color 0.3s ease;
+    }
+    .social-icons a:hover {
+        background-color: #e50914;
+    }
+    .footer-bottom {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+    }
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 36px;
+        }
+        .hero-content p {
+            font-size: 18px;
+        }
+        .footer-section {
+            flex: 100%;
+            margin-right: 0;
+        }
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">StreamFlix</div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#channels">Channels</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Stream Your Favorite Channels</h1>
+            <p>One subscription. Unlimited entertainment.</p>
+            <a href="#pricing" class="cta-button">Start Streaming Now</a>
+        </div>
+    </section>
+
+    <section id="channels" class="channels">
+        <div class="container">
+            <h2>Featured Channels</h2>
+            <div class="channel-grid">
+                <div class="channel-card">
+                    <img src="https://websimcreationengine.com/images/channel1.jpg" alt="Entertainment channel logo, modern design with vibrant colors" class="channel-image" width="250" height="444">
+                    <div class="channel-info">
+                        <h3>EntertainMax</h3>
+                        <p>24/7 entertainment for the whole family</p>
+                        <a href="https://websimcreationengine.com/channels/entertainmax" class="channel-button">See More</a>
+                        <div class="price">$9.99/month</div>
+                    </div>
+                </div>
+                <div class="channel-card">
+                    <img src="https://websimcreationengine.com/images/channel2.jpg" alt="Sports channel logo, dynamic design with athlete silhouette" class="channel-image" width="250" height="444">
+                    <div class="channel-info">
+                        <h3>SportZone</h3>
+                        <p>Live sports coverage and exclusive content</p>
+                        <a href="https://websimcreationengine.com/channels/sportzone" class="channel-button">See More</a>
+                        <div class="price">$14.99/month</div>
+                    </div>
+                </div>
+                <div class="channel-card">
+                    <img src="https://websimcreationengine.com/images/channel3.jpg" alt="Movie channel logo, classic film reel design" class="channel-image" width="250" height="444">
+                    <div class="channel-info">
+                        <h3>CineMagic</h3>
+                        <p>Blockbuster movies and timeless classics</p>
+                        <a href="https://websimcreationengine.com/channels/cinemagic" class="channel-button">See More</a>
+                        <div class="price">$12.99/month</div>
+                    </div>
+                </div>
+                <div class="channel-card">
+                    <img src="https://websimcreationengine.com/images/channel4.jpg" alt="Documentary channel logo, globe and camera lens design" class="channel-image" width="250" height="444">
+                    <div class="channel-info">
+                        <h3>DiscoverNow</h3>
+                        <p>Fascinating documentaries and educational content</p>
+                        <a href="https://websimcreationengine.com/channels/discovernow" class="channel-button">See More</a>
+                        <div class="price">$8.99/month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offer-section">
+        <div class="container">
+            <h2 class="offer-title">Get Everything You Want in One Click</h2>
+            <a href="#" class="offer-button">
+                <i class="fas fa-gift"></i> Get Offer
+            </a>
+        </div>
+    </section>
+
+    <section id="video" class="video-section">
+        <div class="container">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About StreamFlix</h3>
+                    <p>StreamFlix is your ultimate streaming destination, offering a wide variety of channels and content for all your entertainment needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="https://websimcreationengine.com/about">About Us</a></li>
+                        <li><a href="https://websimcreationengine.com/faq">FAQ</a></li>
+                        <li><a href="https://websimcreationengine.com/terms">Terms of Service</a></li>
+                        <li><a href="https://websimcreationengine.com/privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: support@streamflix.com</li>
+                        <li>Phone: 1-800-STREAM-NOW</li>
+                        <li>Address: 123 Streaming Lane, Digital City, ST 12345</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/streamflix"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/streamflix"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/streamflix"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/streamflix"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 StreamFlix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButton = document.querySelector('.cta-button');
+            ctaButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pricingSection = document.querySelector('#pricing');
+                pricingSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            const channelButtons = document.querySelectorAll('.channel-button');
+            channelButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const channelName = this.parentElement.querySelector('h3').textContent;
+                    alert(`Explore more about ${channelName}! Subscribe now for exclusive content.`);
+                });
+            });
+
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                } else {
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                }
+            });
+
+            const offerButton = document.querySelector('.offer-button');
+            offerButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Trigger confetti effect
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+
+                // Trigger balloon effect
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        confetti({
+                            particleCount: 1,
+                            startVelocity: 30,
+                            spread: 360,
+                            ticks: 60,
+                            origin: { x: Math.random(), y: Math.random() - 0.2 },
+                            colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'],
+                            shapes: ['circle'],
+                            scalar: 2
+                        });
+                    }, i * 200);
+                }
+
+                // Show celebration message
+                alert('Congratulations! You\'ve unlocked our special offer. Redirecting you to the offer page...');
+
+                // Redirect after a short delay
+                setTimeout(() => {
+                    window.location.href = 'https://websimcreationengine.com/special-offer';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
