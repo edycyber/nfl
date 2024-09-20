@@ -1,0 +1,238 @@
+<html><head><base href="https://websim.example.com/thursday-night-football/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Experience Thursday Night Football like never before! Live stream, exclusive content, and unbeatable deals. Don't miss out - click now to join the action!">
+<title>Thursday Night Football Stream - Sign Up Now!</title>
+<style>
+  :root {
+    --primary-color: #1e3a8a;
+    --secondary-color: #fbbf24;
+    --text-color: #ffffff;
+    --background-color: #0f172a;
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 0;
+  }
+  
+  .hero-content {
+    flex: 1;
+    padding-right: 2rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #f59e0b;
+  }
+  
+  .hero-video {
+    flex: 1;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .hero-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .players {
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem 0;
+  }
+  
+  .player-card {
+    width: 30%;
+    aspect-ratio: 9/16;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .player-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .price-section {
+    text-align: center;
+    margin: 4rem 0;
+  }
+  
+  .price {
+    font-size: 4rem;
+    color: var(--secondary-color);
+  }
+  
+  .cart-icon {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">TNF</div>
+      <div class="cart-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count">0</span>
+      </div>
+    </header>
+    
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Experience Thursday Night Football Like Never Before</h1>
+          <p>Get exclusive access to live streams, expert commentary, and behind-the-scenes content. Don't miss a single play!</p>
+          <a href="#signup" class="cta-button pulse">Sign Up Now</a>
+        </div>
+        <div class="hero-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </section>
+      
+      <section class="players">
+        <div class="player-card" style="background-image: url('https://websim.example.com/images/player1.jpg');" alt="NFL player in action pose, 9:16 aspect ratio"></div>
+        <div class="player-card" style="background-image: url('https://websim.example.com/images/player2.jpg');" alt="NFL quarterback throwing a pass, 9:16 aspect ratio"></div>
+        <div class="player-card" style="background-image: url('https://websim.example.com/images/player3.jpg');" alt="NFL wide receiver catching a ball, 9:16 aspect ratio"></div>
+      </section>
+      
+      <section class="price-section">
+        <h2>Unbeatable Value</h2>
+        <div class="price">$19.99</div>
+        <p>Per game access to premium content and live streams</p>
+        <a href="https://www.aimovieclub.com" class="cta-button" id="add-to-cart">Add to Cart</a>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    let cartCount = 0;
+    const cartCountElement = document.querySelector('.cart-count');
+    const addToCartButton = document.getElementById('add-to-cart');
+    const cartIcon = document.querySelector('.cart-icon');
+
+    addToCartButton.addEventListener('click', (e) => {
+      // We're not preventing the default behavior anymore
+      // This allows the link to redirect to aimovieclub.com
+      cartCount++;
+      cartCountElement.textContent = cartCount;
+      cartCountElement.classList.add('pulse');
+      setTimeout(() => {
+        cartCountElement.classList.remove('pulse');
+      }, 1000);
+    });
+
+    cartIcon.addEventListener('click', () => {
+      window.location.href = 'https://www.aimovieclub.com';
+    });
+
+    // Animate on scroll
+    const animateOnScroll = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(animateOnScroll, {
+      root: null,
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.player-card, .price-section').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body></html>
